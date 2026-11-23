@@ -1,0 +1,49 @@
+Source data (as read from file):
+Mortgage Standard, amount 4500000.00 RUB, rate 11.50% per year
+Auto Loan Fast, amount 1200000.50 RUB, rate 14.90% per year
+Student Credit, amount 350000.00 RUB, rate 5.50% per year
+Business Start, amount 25000.75 USD, rate 9.20% per year
+Consumer Credit, amount 80000.00 EUR, rate 12.00% per year
+Student Credit, amount 350000.00 RUB, rate 5.50% per year
+Home Repair, amount 150000.00 RUB, rate 10.80% per year
+Express Credit, amount 80000.00 EUR, rate 13.50% per year
+
+Inserting objects:
+Mortgage Standard, amount 4500000.00 RUB, rate 11.50% per year
+    set: inserted; unordered_set: inserted
+Auto Loan Fast, amount 1200000.50 RUB, rate 14.90% per year
+    set: inserted; unordered_set: inserted
+Student Credit, amount 350000.00 RUB, rate 5.50% per year
+    set: inserted; unordered_set: inserted
+Business Start, amount 25000.75 USD, rate 9.20% per year
+    set: inserted; unordered_set: inserted
+Consumer Credit, amount 80000.00 EUR, rate 12.00% per year
+    set: inserted; unordered_set: inserted
+Student Credit, amount 350000.00 RUB, rate 5.50% per year
+    set: rejected (same amount already exists); unordered_set: rejected (equal object already exists)
+Home Repair, amount 150000.00 RUB, rate 10.80% per year
+    set: inserted; unordered_set: inserted
+Express Credit, amount 80000.00 EUR, rate 13.50% per year
+    set: rejected (same amount already exists); unordered_set: inserted
+
+Container set (sorted by amount), size 6:
+Business Start, amount 25000.75 USD, rate 9.20% per year
+Consumer Credit, amount 80000.00 EUR, rate 12.00% per year
+Home Repair, amount 150000.00 RUB, rate 10.80% per year
+Student Credit, amount 350000.00 RUB, rate 5.50% per year
+Auto Loan Fast, amount 1200000.50 RUB, rate 14.90% per year
+Mortgage Standard, amount 4500000.00 RUB, rate 11.50% per year
+
+Container unordered_set (order not defined), size 7:
+Consumer Credit, amount 80000.00 EUR, rate 12.00% per year
+Express Credit, amount 80000.00 EUR, rate 13.50% per year
+Business Start, amount 25000.75 USD, rate 9.20% per year
+Student Credit, amount 350000.00 RUB, rate 5.50% per year
+Home Repair, amount 150000.00 RUB, rate 10.80% per year
+Auto Loan Fast, amount 1200000.50 RUB, rate 14.90% per year
+Mortgage Standard, amount 4500000.00 RUB, rate 11.50% per year
+
+Search for object with amount 350000.00 and other fields different:
+    set::find: found (comparison by amount only)
+    unordered_set::find: not found (comparison by all fields)
+    set::count of first source object: 1, unordered_set::count: 1
